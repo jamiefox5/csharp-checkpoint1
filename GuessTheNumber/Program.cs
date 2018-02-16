@@ -10,24 +10,31 @@ namespace GuessTheNumber
     {
         static void Main(string[] args)
         {
-            int random = new Random().Next(1, 11);
-
-            Console.WriteLine(random);
-
-            Console.WriteLine("Please enter a number between 1 and 10:");
-
-            int number = int.Parse(Console.ReadLine());
-
-            if (random == number)
+            int count = 0;
+            while (count < 4)
             {
-                Console.WriteLine("You guess the correct number");
-            }
-            else
-            {
-                Console.WriteLine("You lost, so sad!");
-            }
 
-            Console.ReadLine();
+
+
+                Console.WriteLine("Please enter a number between 1 and 10:");
+
+                int number = int.Parse(Console.ReadLine());
+
+                int random = new Random().Next(1, 11);
+                Console.WriteLine(random);
+                if (random == number)
+                {
+                    Console.WriteLine("You guess the correct number");
+                    count = count + 1;
+                }
+                else
+                {
+                    Console.WriteLine("You lost, so sad!");
+                    count = count + 1;
+                }
+
+
+            }
         }
     }
 }
